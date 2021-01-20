@@ -29,4 +29,8 @@ fi
 
 echo "Checks done, all good"
 
+# copy all dotfiles to the current home directory
+echo "Copying dotfiles"
+cp -r ./dotfiles/.* ~/
+
 
