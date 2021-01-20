@@ -1,0 +1,2 @@
+install_cmd=sudo pacman -S
+
