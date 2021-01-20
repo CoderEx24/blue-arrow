@@ -1,0 +1,10 @@
+alias shdwn=sudo shutdown -P 00  \
+    view=vim -R                  \
+    vim.tiny=vim --noplugins     \
+    vi=vim -v                    \
+    binview=vim -R -b            \
+    mv=mv -i                     \
+    rm=rm -i                     \
+    mkdir=mkdir -p               \
+
+
