@@ -36,3 +36,27 @@ copy_dotfiles()
     echo "Done"
 }
 
+install_programs()
+{
+    if [ $# -eq 0 ]; then
+        programs_array=($(cat ./program_list | sed "s/\n/ /g"))
+    else
+        programs_array=($@)
+    fi
+    failed_programs=
+
+    for program in "${programs_array[@]}"
+    do
+        if ! $install_cmd $program >/dev/null 2>&1
+        then
+            choice='y'
+            read -p "failed to install $program, retry [Y/n] " choice
+            choice="$(echo $choice | tr '[:upper:]' '[:lower:]')"
+            [ "$choice" = "y" ] && failed_programs="$program $failed_programs"
+        fi
+    done
+
+    [ "$failed_programs" != "" ] && install_programs "$failed_programs"
+}
+
+
