@@ -59,4 +59,28 @@ install_programs()
     [ "$failed_programs" != "" ] && install_programs "$failed_programs"
 }
 
+run_scripts()
+{
+    if [ $# -eq 0 ]; then
+        scripts_array=($(ls ./scripts | sort -n | sed "s/\n/ /g"))
+    else
+        scripts_array=($@)
+    fi
+    failed_scripts=
+
+    for script in "${scripts_array[@]}"
+    do
+        echo "Running $script"
+        chmod +x ./scripts/$script
+        if ! ./scripts/$script >/dev/null 2>&1
+        then
+            choice='y'
+            read -p "failed to execute $script, retry [Y/n] " choice
+            choice="$(echo $choice | tr '[:upper:]' '[:lower:]')"
+            [ "$choice" = "y" ] && failed_scripts="$script $failed_scripts"
+        fi
+    done
+
+    [ "$failed_scripts" != "" ] && run_scripts "$failed_scripts"
+}
 
