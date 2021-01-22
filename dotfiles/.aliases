@@ -6,5 +6,4 @@ alias shdwn='sudo shutdown -P 00'  \
     mv='mv -i'                     \
     rm='rm -i'                     \
     mkdir='mkdir -p'               \
-
-
+    ls='ls --color=auto -h -s'     \
