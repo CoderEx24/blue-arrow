@@ -6,4 +6,8 @@ alias shdwn='sudo shutdown -P 00'  \
     mv='mv -i'                     \
     rm='rm -i'                     \
     mkdir='mkdir -p'               \
-    ls='ls --color=auto -h -s'     \
+    ls='ls --color=auto -h'        \
+    tar='tar cvf'                  \
+    ztar='tar zcvf'                \
+    untar='tar xvf'                \
+    zuntar='tar zxvf'              \
