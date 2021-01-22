@@ -84,3 +84,8 @@ run_scripts()
     [ "$failed_scripts" != "" ] && run_scripts "$failed_scripts"
 }
 
+copy_dotfiles
+install_programs
+run_scripts
+
+
