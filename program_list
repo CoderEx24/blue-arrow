@@ -1,4 +1,10 @@
 zsh
 xorg-server
 xorg-xinit
+xorg-xrdb
 python3
+cmake
+clang
+jdk11-openjdk
+awesome-terminal-fonts
+ttf-hack
