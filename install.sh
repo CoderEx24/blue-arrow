@@ -87,3 +87,5 @@ run_scripts()
 copy_dotfiles
 install_programs
 run_scripts
+
+sudo reboot
