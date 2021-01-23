@@ -1,1 +1,1 @@
-install_cmd='sudo pacman -S'
+install_cmd='sudo pacman -S --noconfirm'
