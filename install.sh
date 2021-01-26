@@ -27,6 +27,28 @@ if [ "$install_cmd" = "" ]; then
     exit 0
 fi
 
+# checking for the other options
+# if there is an option is not set, provide a default value
+if [ -z "$m_copy_dotfiles" ]; then
+    echo "m_copy_dotfiles is not set, setting to default (m_copy_dotfiles=1)"
+    m_copy_dotfiles=1
+fi
+
+if [ -z "$m_install_programs" ]; then
+    echo "m_install_programs is not set, setting to default (m_install_programs=1)"
+    m_install_programs=1
+fi
+
+if [ -z "$m_run_scripts" ]; then
+    echo "m_run_scripts is not set, setting to default (m_run_scripts=1)"
+    m_run_scripts=1
+fi
+
+if [ -z "$m_remove_after_finish" ]; then
+    echo "m_remove_after_finish is not set, setting to default (m_remove_after_finish=0)"
+    m_remove_after_finish=0
+fi
+
 echo "Checks done, all good"
 
 copy_dotfiles()
