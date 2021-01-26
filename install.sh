@@ -90,13 +90,17 @@ install_programs()
 
     for program in "${programs_array[@]}"
     do
-        if ! $install_cmd $program >/dev/null 2>&1
+        echo "Installing $program"
+        echo "---------------------------------------------------------------"
+        if ! $install_cmd $program
         then
+            echo "---------------------------------------------------------------"
             choice='y'
             read -p "failed to install $program, retry [Y/n] " choice
             choice="$(echo $choice | tr '[:upper:]' '[:lower:]')"
             [ "$choice" = "y" ] && failed_programs="$program $failed_programs"
         fi
+        echo "---------------------------------------------------------------"
     done
 
     [ "$failed_programs" != "" ] && install_programs "$failed_programs"
