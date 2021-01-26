@@ -84,12 +84,14 @@ run_scripts()
     [ "$failed_scripts" != "" ] && run_scripts "$failed_scripts"
 }
 
-copy_dotfiles
-install_programs
-run_scripts
+[ $m_copy_dotfiles -eq 1 ] && copy_dotfiles
+[ $m_install_programs -eq 1 ] && install_programs
+[ $m_run_scripts -eq 1 ] && run_scripts
 
-dirname=`pwd`
-cd ..
-rm -rvf $dirname
+if [ $m_remove_after_finish -eq 1 ]; then
+    dirname=`pwd`
+    cd ..
+    rm -rvf $dirname
+fi
 
 sudo reboot
