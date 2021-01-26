@@ -76,7 +76,7 @@ copy_dotfiles()
 install_programs()
 {
     if [ $# -eq 0 ]; then
-        programs_array=($(cat ./program_list | sed "s/\n/ /g"))
+        programs_array=($(cat ./program_list))
     else
         programs_array=($@)
     fi
@@ -99,7 +99,7 @@ install_programs()
 run_scripts()
 {
     if [ $# -eq 0 ]; then
-        scripts_array=($(ls ./scripts | sort -n | sed "s/\n/ /g"))
+        scripts_array=($(ls ./scripts | sort -n))
     else
         scripts_array=($@)
     fi
