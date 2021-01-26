@@ -49,6 +49,11 @@ if [ -z "$m_remove_after_finish" ]; then
     m_remove_after_finish=0
 fi
 
+if [ -z "$m_reboot" ]; then
+    echo "m_reboot is not set, setting to default (m_reboot=0)"
+    m_reboot=0
+fi
+
 dotfiles_list_str=($(ls -A ./dotfiles/))
 programs_list_str=($(cat ./program_list))
 scripts_list_str=($(ls ./scripts/))
@@ -61,6 +66,7 @@ echo -e "install command is \"$install_cmd\""
     echo -e "Will install the following programs\n${programs_list_str[@]}\n"
 [ $m_run_scripts -eq 1 ] && \
     echo -e "Will run the following scripts\n${scripts_list_str[@]}\n"
+[ $m_reboot -eq 1 ] && echo "Will reboot after it is done"
 
 choice='y'
 read -p "Proceed? [Y/n] " choice
@@ -131,4 +137,4 @@ if [ $m_remove_after_finish -eq 1 ]; then
     rm -rvf $dirname
 fi
 
-sudo reboot
+[ $m_reboot -eq 1 ] && sudo reboot
