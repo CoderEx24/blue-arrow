@@ -22,7 +22,7 @@ source ./config
 
 # checking for install_cmd command
 # exit if not set
-if [ "$install_cmd" = "" ]; then
+if [ -z "$install_cmd" ]; then
     echo '$install_cmd is not set, exiting'
     exit 0
 fi
