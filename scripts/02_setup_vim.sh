@@ -13,6 +13,6 @@ git clone https://github.com/ycm-core/YouCompleteMe ./my_plugins/YouCompleteMe/
 
 # install it
 cd ./my_plugins/YouCompleteMe
-git submodule --init --recursive
+git submodule update --init --recursive
 python3 install.py --clangd-completer --java-completer
 
