@@ -119,13 +119,16 @@ run_scripts()
     do
         echo "Running $script"
         chmod +x ./scripts/$script
-        if ! ./scripts/$script >/dev/null 2>&1
+        echo "---------------------------------------------------------------"
+        if ! ./scripts/$script
         then
+            echo "---------------------------------------------------------------"
             choice='y'
             read -p "failed to execute $script, retry [Y/n] " choice
             choice="$(echo $choice | tr '[:upper:]' '[:lower:]')"
             [ "$choice" = "y" ] && failed_scripts="$script $failed_scripts"
         fi
+        echo "---------------------------------------------------------------"
     done
 
     [ "$failed_scripts" != "" ] && run_scripts "$failed_scripts"
