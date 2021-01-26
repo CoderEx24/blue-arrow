@@ -49,7 +49,22 @@ if [ -z "$m_remove_after_finish" ]; then
     m_remove_after_finish=0
 fi
 
+dotfiles_list_str=($(ls -A ./dotfiles/))
+programs_list_str=($(cat ./program_list))
+scripts_list_str=($(ls ./scripts/))
+
 echo "Checks done, all good"
+echo -e "install command is \"$install_cmd\""
+[ $m_copy_dotfiles -eq 1 ] && \
+    echo -e "Will copy the following files to HOME\n${dotfiles_list_str[@]}\n"
+[ $m_install_programs -eq 1 ] && \
+    echo -e "Will install the following programs\n${programs_list_str[@]}\n"
+[ $m_run_scripts -eq 1 ] && \
+    echo -e "Will run the following scripts\n${scripts_list_str[@]}\n"
+
+choice='y'
+read -p "Proceed? [Y/n] " choice
+[ "$choice" = "n" ] && echo -e "exiting, sad :'("; exit 0
 
 copy_dotfiles()
 {
