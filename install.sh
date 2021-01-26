@@ -88,4 +88,8 @@ copy_dotfiles
 install_programs
 run_scripts
 
+dirname=`pwd`
+cd ..
+rm -rvf $dirname
+
 sudo reboot
