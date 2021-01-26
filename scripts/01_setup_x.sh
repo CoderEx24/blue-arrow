@@ -3,8 +3,8 @@
 # download necessary stuff
 git clone 'https://github.com/CoderEx24/dwm' '/tmp/dwm'
 git clone 'https://github.com/CoderEx24/slstatus' '/tmp/slstatus'
-wget 'https://dl.suckless.org/tools/dmenu-5.0.tar.gz' -P '/tmp'
-tar xf '/tmp/dmenu-5.0.tar.gz'
+curl 'https://dl.suckless.org/tools/dmenu-5.0.tar.gz' --output '/tmp/dmenu.tar.gz'
+tar -xvf '/tmp/dmenu.tar.gz'
 
 # compile and install dwm
 cd /tmp/dwm
@@ -19,4 +19,4 @@ cd '/tmp/dmenu-5.0'
 sudo make clean install
 
 # cleanup - remove all unnecessary stuff
-rm -rf '/tmp/dwm' '/tmp/dmenu-5.0' '/tmp/slstatus' '/tmp/dmenu-5.0.tar.gz'
+rm -rf '/tmp/dwm' '/tmp/dmenu-5.0' '/tmp/slstatus' '/tmp/dmenu.tar.gz'
