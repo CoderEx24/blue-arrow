@@ -9,5 +9,10 @@ jdk11-openjdk
 awesome-terminal-fonts
 ttf-hack
 make
+libx11
 libxft
 libxinerama
+vifm
+vimb
+scrot
+cmus
