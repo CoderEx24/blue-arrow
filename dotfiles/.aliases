@@ -8,3 +8,11 @@ alias shdwn='doas shutdown -P 00'  \
     ztar='tar zcvf'                \
     untar='tar xvf'                \
     zuntar='tar zxvf'              \
+
+# Vim symlinks
+
+[ ! -L "/usr/local/bin/ex"      ]   && doas ln /bin/vim /usr/local/bin/ex
+[ ! -L "/usr/local/bin/rview"   ]   && doas ln /bin/vim /usr/local/bin/rview
+[ ! -L "/usr/local/bin/rvim"    ]   && doas ln /bin/vim /usr/local/bin/rvim
+[ ! -L "/usr/local/bin/view"    ]   && doas ln /bin/vim /usr/local/bin/view
+[ ! -L "/usr/local/bin/vimdiff" ]   && doas ln /bin/vim /usr/local/bin/vimdiff
