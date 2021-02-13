@@ -1,0 +1,18 @@
+4c4
+< static const unsigned int borderpx  = 4;        /* border pixel of windows */
+---
+> static const unsigned int borderpx  = 1;        /* border pixel of windows */
+8,9c8,9
+< static const char *fonts[]          = { "Hack-Regular:size=12", "Inconsolata-Regular:size=12" };
+< static const char dmenufont[]       = "Hack-Regular:size=12";
+---
+> static const char *fonts[]          = { "monospace:size=10" };
+> static const char dmenufont[]       = "monospace:size=10";
+60c60
+< static const char *termcmd[]  = { "urxvt", NULL };
+---
+> static const char *termcmd[]  = { "st", NULL };
+65,67d64
+<     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = {"tabbed", "-c", "vimb", "-e"}}},
+<     { MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("vifm") },
+< 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("scrot") },
