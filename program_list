@@ -25,3 +25,6 @@ ffmpeg
 mpv
 ibus
 ibus-kkc
+pulseaudio
+pulseaudio-alsa
+pulsemixer
