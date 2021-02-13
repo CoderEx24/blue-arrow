@@ -8,6 +8,9 @@ clang
 jdk11-openjdk
 awesome-terminal-fonts
 ttf-hack
+ttf-amiri
+ttf-hanazono
+ttf-mathtype
 make
 libx11
 libxft
@@ -17,3 +20,8 @@ vimb
 scrot
 cmus
 krita
+github-cli
+ffmpeg
+mpv
+ibus
+ibus-kkc
