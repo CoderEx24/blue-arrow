@@ -1,4 +1,4 @@
-alias shdwn='sudo shutdown -P 00'  \
+alias shdwn='doas shutdown -P 00'  \
     binview='vim -R -b'            \
     mv='mv -i -v'                  \
     rm='rm -i -v'                  \
