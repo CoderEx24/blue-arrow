@@ -30,7 +30,7 @@ pulseaudio-alsa
 pulsemixer
 discord
 qemu
+qt-virt-manager
 htop
 autocutsel
-networkmanager
-blueman
+bluez
