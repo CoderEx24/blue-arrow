@@ -25,12 +25,12 @@ ffmpeg
 mpv
 ibus
 ibus-kkc
-pulseaudio
-pulseaudio-alsa
-pulsemixer
+pipewire
+pipewire-pulse
 discord
 qemu
 qt-virt-manager
 htop
 autocutsel
 bluez
+dosfstools
