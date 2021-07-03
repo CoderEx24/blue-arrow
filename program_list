@@ -10,7 +10,6 @@ jdk11-openjdk
 awesome-terminal-fonts
 ttf-hack
 ttf-hanazono
-ttf-mathtype
 make
 libx11
 libxft
