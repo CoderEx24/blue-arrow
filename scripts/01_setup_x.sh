@@ -6,7 +6,6 @@ scripts_dir="`pwd`"
 curl 'https://dl.suckless.org/dwm/dwm-6.3.tar.gz' --output /tmp/dwm.tar.gz
 curl 'https://dl.suckless.org/tools/dmenu-5.1.tar.gz' --output /tmp/dmenu.tar.gz
 git clone https://git.suckless.org/slstatus /tmp/slstatus
-git clone https://github.com/muennich/sxiv /tmp/sxiv
 cd /tmp
 tar -xvf dmenu.tar.gz
 tar -xvf dwm.tar.gz
@@ -24,10 +23,6 @@ sudo make clean install
 
 # compile and install dmenu
 cd '/tmp/dmenu-5.1'
-sudo make clean install
-
-# compile and install sxiv
-cd /tmp/sxiv
 sudo make clean install
 
 # cleanup - remove all unnecessary stuff
