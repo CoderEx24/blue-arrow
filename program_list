@@ -13,6 +13,7 @@ ttf-hanazono
 make
 libx11
 libxft
+libexif
 libxinerama
 vifm
 vimb
